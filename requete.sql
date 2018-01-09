@@ -17,8 +17,12 @@ SELECT `NumeroVente`, `Date` FROM `vente` WHERE `Date` = '2018/01/04' ORDER BY `
 SELECT Quantite, NomIngredients FROM `boisson_has_ingredients` INNER JOIN boisson ON boisson.CodeBoisson = boisson_has_ingredients.Boisson_CodeBoisson 
 INNER JOIN ingredients ON ingredients.CodeIngredients = boisson_has_ingredients.Ingredients_CodeIngredients WHERE NomBoisson = "Expresso" 
 
-Liste des boissons disponibles (pour lesquelles les ingrédients sont dispo)
-o
+-- Liste des boissons disponibles (pour lesquelles les ingrédients sont dispo)
+SELECT NomBoisson, Quantite, StockIngrédients  FROM `boisson_has_ingredients`JOIN boisson
+ ON boisson.CodeBoisson = boisson_has_ingredients.Boisson_CodeBoisson JOIN ingredients
+  ON ingredients.CodeIngredients = boisson_has_ingredients.Ingredients_CodeIngredients 
+  GROUP BY NomBoisson HAVING MIN(Quantite <= StockIngrédients) = 1
+
 
 -- Liste des boissons vendues aujourd’hui
 SELECT NomBoisson, Date FROM boisson JOIN vente ON vente.Boisson_CodeBoisson = boisson.CodeBoisson WHERE Date = CURRENT_DATE 
