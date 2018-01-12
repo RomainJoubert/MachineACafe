@@ -67,6 +67,8 @@ function preparerBoisson($choixBoisson,$nbSucres){
 				$boissonsTab->closeCursor();	
 } 	
 
+
+
 // Affiche la recette d'UNE SEULE boisson
 // function prepare($recette) {
 // 	$liste = "";

@@ -46,7 +46,7 @@ include "fonctions.php";
 		<p></p>
 		<input type="text" name="sucre" placeholder="Quantité de sucre désiré">
 		<input type="submit" value="valider"> -->
-		
+
 		<div class="blocInfos">
 			<form method="post" action="machineCafe.php">
 				<select name="choixBoisson">
@@ -58,9 +58,9 @@ include "fonctions.php";
 				<input type="number" min="0" max="5" name="choixSucre" placeholder="Combien de sucres ?"/>
 				<input type="submit" value="Valider"/>
 			</form>
-			<p>
+			<p></p>
 			<?php
-			if (isset($_POST["choixBoisson"]) AND isset($_POST["choixSucre"]))
+			if (isset($_POST["choixBoisson"]) AND !empty($_POST["choixSucre"]))
 			{
 			echo preparerBoisson($_POST['choixBoisson'], $_POST["choixSucre"]);
 			} else {

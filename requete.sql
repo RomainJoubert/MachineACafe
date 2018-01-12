@@ -60,7 +60,7 @@ UPDATE boisson
 set Prix = Prix +10
 
 -- Créer une nouvelle vente d’expresso avec 2 sucres
-INSERT  INTO vente (NumeroVente,Date,Boisson_CodeBoisson,  NbSucre, Heure)  VALUES(NULL, CURRENT_DATE, '002', 2, CURRENT_TIME)
+INSERT  INTO vente (NumeroVente,Date,Boisson_CodeBoisson, NbSucre, Heure)  VALUES(NULL, CURRENT_DATE, '002', 2, CURRENT_TIME)
 
 -- Supprimer cette vente
 DELETE FROM vente
